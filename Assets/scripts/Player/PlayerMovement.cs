@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     public CharacterController2D controller;
+    Rigidbody2D rigidbody2D;
+    Camera viewCamera;
     public float runSpeed = 40f;
 
     float horizontalMove = 0f;
@@ -14,18 +16,24 @@ public class PlayerMovement : MonoBehaviour {
     bool up = false;
 
 
+    private void Start()
+    {
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        viewCamera = Camera.main;
+    }
+
+
     // Update is called once per frame
     void Update () {
 		horizontalMove = Input.GetAxisRaw("Horizontal");
         verticalMove = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            Debug.Log("JUMP");
-            jump = true;
-        }
 
-    
+        //Get the mouse position, and have the Player look towards it:
+        Vector3 diff = viewCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        diff.Normalize();
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
     }
 
     private void FixedUpdate() {

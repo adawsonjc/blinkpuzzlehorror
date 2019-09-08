@@ -169,7 +169,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0eb610eb03220d14dbbd0325d403c93e, type: 2}
+  - {fileID: 2100000, guid: 282de14c09a40004a9710a5522677a34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -552,7 +552,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0eb610eb03220d14dbbd0325d403c93e, type: 2}
+  - {fileID: 2100000, guid: 282de14c09a40004a9710a5522677a34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1360,7 +1360,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0eb610eb03220d14dbbd0325d403c93e, type: 2}
+  - {fileID: 2100000, guid: 282de14c09a40004a9710a5522677a34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1503,6 +1503,7 @@ GameObject:
   - component: {fileID: 689940787}
   - component: {fileID: 689940786}
   - component: {fileID: 689940788}
+  - component: {fileID: 689940789}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1546,7 +1547,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0eb610eb03220d14dbbd0325d403c93e, type: 2}
+  - {fileID: 2100000, guid: 282de14c09a40004a9710a5522677a34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1703,6 +1704,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &689940789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689940780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c54a9bbfc3e3a4eaaecaf46f6ba100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 3.66
+  viewAngle: 87
 --- !u!1 &823195925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,7 +1767,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0eb610eb03220d14dbbd0325d403c93e, type: 2}
+  - {fileID: 2100000, guid: 282de14c09a40004a9710a5522677a34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
