@@ -30,7 +30,9 @@ public class PlayerMovement : MonoBehaviour {
 
 
         //Get the mouse position, and have the Player look towards it:
+        //The below is a translation of Vector3.Angle
         Vector3 diff = viewCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        //Turn the Vector into a Unit vector using normalize
         diff.Normalize();
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
