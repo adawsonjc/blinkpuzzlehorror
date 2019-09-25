@@ -5,7 +5,8 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour {
 
     private Transform playerTransform;
-
+    public float zindex;
+  
 	void Start () {
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -18,7 +19,7 @@ public class CameraFollow : MonoBehaviour {
 
         // set cameras position to be equal to player
         temp = playerTransform.position;
-        temp.z = -10;
+        temp.z = zindex;
 
         // set cameras temp position to current camera position
         transform.position = temp;
