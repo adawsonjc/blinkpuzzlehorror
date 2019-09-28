@@ -64252,7 +64252,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689940780}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e7ad5694f06e7b54ab3100653699ea25, type: 2}
   m_CullingMode: 0
@@ -64450,17 +64450,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c54a9bbfc3e3a4eaaecaf46f6ba100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 20
-  viewAngle: 0
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 512
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 256
-  visibleTargets: []
-  meshResolution: 1
-  viewMeshFilter: {fileID: 192008787}
 --- !u!114 &733728944
 MonoBehaviour:
   m_ObjectHideFlags: 0
