@@ -1,0 +1,175 @@
+[33mcommit 421eba6d9f448faba7b1fa2763bbb564728bc5c4[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Tue Oct 1 16:37:33 2019 +0100
+
+    created new labratory level
+
+[33mcommit 527ad1ce17d6c27021fe4be7e0036b8bd7bcb9c9[m
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Sun Sep 29 20:48:43 2019 +0100
+
+    change mask sprite
+
+[33mcommit 9a78bed1c659ab26f37d964144c2ad0f453e1383[m
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Sun Sep 29 20:46:06 2019 +0100
+
+    added new labratory level
+
+[33mcommit 4055ec558d7d73fd780487f84316647a63f29bab[m
+Author: adawsonjc <adawson11@hotmail.co.uk>
+Date:   Sat Sep 28 22:03:18 2019 +0100
+
+    Tidying crap... Buggar off sunnyland.
+
+[33mcommit 2706be905b6f801e29878cf610e9babb94de5897[m
+Author: adawsonjc <adawson11@hotmail.co.uk>
+Date:   Sat Sep 28 21:51:12 2019 +0100
+
+    Deleting crap... iteration 1.
+
+[33mcommit af6f7f8e2b771d50e34f5c3101d2830affcfccca[m
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Thu Sep 26 17:07:32 2019 +0100
+
+    change height of shadow background
+
+[33mcommit 06b128584c0def6a89526edb7903608a17f57a36[m
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Thu Sep 26 00:16:06 2019 +0100
+
+    added a new vision for the palers surroundings
+
+[33mcommit af853e3af92cc37467982b57780d8e09287c6083[m
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Wed Sep 25 22:39:31 2019 +0100
+
+    first pass at adding a torch and darkness mask
+
+[33mcommit 552b454e5431f29c3718e033e9e1122c8204b1f1[m
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Mon Sep 23 21:39:25 2019 +0100
+
+    added boss
+
+[33mcommit dda4979b53bca3b51bc7ca5e77a527527d21b4a9[m
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Mon Sep 23 00:17:02 2019 +0100
+
+    made small level
+
+[33mcommit c0235a76054d6290748663dd61e6f4956b56bb3d[m
+Merge: b077b72 49a9740
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Sun Sep 22 20:35:36 2019 +0100
+
+    merge
+
+[33mcommit b077b7249a3bceedd2c9c579f938e155493f4ec2[m
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Sun Sep 22 20:08:34 2019 +0100
+
+    new tiles
+
+[33mcommit 49a9740fbd196b6e0e07de9196c7be7da73811d6[m
+Author: adawsonjc <adawson11@hotmail.co.uk>
+Date:   Sun Sep 22 19:43:33 2019 +0100
+
+    Small tidying
+
+[33mcommit 530ff1ce89a5ea29e4950f102eae168ee3c85295[m
+Author: adawsonjc <adawson11@hotmail.co.uk>
+Date:   Tue Sep 17 20:12:25 2019 +0100
+
+    Adding basic Enemy Pathfinding and A* algorithm
+
+[33mcommit f3a9ef9963d7b9dc777cc515e6a4fe96fc7fd301[m
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Mon Sep 16 19:33:26 2019 +0100
+
+    more sprite sheets, testing how to add animation
+
+[33mcommit 4488b2d49ad25a60988c7499d0b97ea5f2cb7b7b[m
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Mon Sep 16 01:29:26 2019 +0100
+
+    added new grim reaper sprtie
+
+[33mcommit fe2d4afe02c37feafd98dd5f0278944aaad7788a[m
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Sun Sep 15 23:54:53 2019 +0100
+
+    saved my basic scene
+
+[33mcommit 7e2f8fea96429b79429d2b96aebf98495d50f22f[m
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Sun Sep 15 22:20:57 2019 +0100
+
+    new tiles
+
+[33mcommit b17829af499148daefef83474f81ca8a4cab6948[m
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Sun Sep 15 18:22:20 2019 +0100
+
+    add: new grass tile maps and base swath colors
+
+[33mcommit c7d033f945efe886daa48e20efff5c94ac0664a9[m
+Author: adawsonjc <adawson11@hotmail.co.uk>
+Date:   Sat Sep 14 22:09:14 2019 +0100
+
+    Mesh Updates
+
+[33mcommit f21bd08ca42d3142c51b110e15bff36d7bd90124[m
+Author: adawsonjc <adawson11@hotmail.co.uk>
+Date:   Sat Sep 14 13:03:16 2019 +0100
+
+    Adding a Mesh to represent the Field of View, an editor for to access the Mesh's rendering order, and commenting out Flip() in charactercontroller
+
+[33mcommit ac7ebf747aa26947cfa601dca709162bc5efec2b[m
+Author: adawsonjc <adawson11@hotmail.co.uk>
+Date:   Mon Sep 9 22:17:00 2019 +0100
+
+    Updates to Field of View, now targets enemies and draws a red line when they are in vision - only in Scene view
+
+[33mcommit d851624b862d5e6fe80575b50670c6bcfe9067ce[m
+Author: adawsonjc <adawson11@hotmail.co.uk>
+Date:   Sun Sep 8 17:52:27 2019 +0100
+
+    Adding some Field of View editor tools
+
+[33mcommit aa0a17e7486434d7f27ee3e890ccf5564e2048ea[m
+Author: adawsonjc <adawson11@hotmail.co.uk>
+Date:   Fri Sep 6 08:12:48 2019 +0100
+
+    Fixing tile gap issues, and fixing sprite rendering order issues
+
+[33mcommit 4aea9770bb820fa5d37ccb27ec090dace74a8c67[m
+Author: James Dawson <jamesdawsonWD@gmail.com>
+Date:   Thu Sep 5 20:59:35 2019 +0100
+
+    inital commit of movement scripts and generic assets
+
+[33mcommit aa36d04394e6c49b4ea9ca7883cdafa0aac38a89[m
+Author: adawsonjc <adawson11@hotmail.co.uk>
+Date:   Mon Aug 26 16:09:27 2019 +0100
+
+    Updating Unity version for development to 2019.02.02
+
+[33mcommit a6b3a9d02c51dfebdba7da032d0f67fc8b4ecd0c[m[33m ([m[1;32mfeature/basic-movement-and-camera-script-setup[m[33m)[m
+Merge: 1d66c9c b0a1f04
+Author: adawsonjc <adawson11@hotmail.co.uk>
+Date:   Sat Aug 3 16:31:24 2019 +0100
+
+    Fixing .gitignore conflict
+
+[33mcommit 1d66c9cdc0beb19dcb62c52134efc58c56a82d07[m
+Author: adawsonjc <adawson11@hotmail.co.uk>
+Date:   Sat Aug 3 16:24:57 2019 +0100
+
+    Unity Project Skeleton commit
+
+[33mcommit b0a1f0473aafdc94e2241fc7cb0c8d9c00b5cb22[m
+Author: adawsonjc <adawson11@hotmail.co.uk>
+Date:   Sat Aug 3 16:00:29 2019 +0100
+
+    Initial commit
