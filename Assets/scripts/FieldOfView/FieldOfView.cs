@@ -71,7 +71,11 @@ public class FieldOfView : MonoBehaviour
         }
 
     }
-
+    public static void DumpToConsole(object obj)
+    {
+        var output = JsonUtility.ToJson(obj, true);
+        Debug.Log(output);
+    }
 
     void DrawFieldOfView()
     {
@@ -82,8 +86,9 @@ public class FieldOfView : MonoBehaviour
         for (int i =0; i <= stepCount; i++)
         {
             float angle = (transform.eulerAngles.z*-1) - viewAngle / 2 + stepAngleSize * i;
-            //Debug.DrawLine(transform.position, transform.position + DirFromAngle(angle, true) * viewRadius, Color.red);
+            Debug.DrawLine(transform.position, transform.position + DirFromAngle(angle, true) * viewRadius, Color.red);
             ViewCastInfo newViewCastInfo = ViewCast(angle);
+            DumpToConsole(newViewCastInfo);
             viewPoints.Add(newViewCastInfo.point);
         }
 
@@ -106,6 +111,20 @@ public class FieldOfView : MonoBehaviour
 
         viewMesh.Clear();
         viewMesh.vertices = vertices;
+   
+        // create new colors array where the colors will be created.
+        Color[] colors = new Color[vertices.Length];
+
+        float a = 1f;
+        // control the color of each segment of field of view. 
+        for (int i = 0; i < vertices.Length; i++)
+        {
+            
+            colors[i] = new Color(0,0,0,a);
+            a = vertices.Length / 2 > i ? a-0.2f : a+0.2f;
+        }
+
+        viewMesh.colors = colors;
         viewMesh.triangles = triangles;
         viewMesh.RecalculateNormals();
     }
@@ -117,10 +136,10 @@ public class FieldOfView : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, viewRadius, obstacleMask);
         if (hit.collider != null)
         {
-            return new ViewCastInfo(true, hit.point, hit.distance, hit.collider.transform.eulerAngles.z); 
+            return new ViewCastInfo(hit, hit.point, hit.distance, hit.collider.transform.eulerAngles.z); 
         } else
         {
-            return new ViewCastInfo(false, transform.position + dir * viewRadius, viewRadius, globalAngle);
+            return new ViewCastInfo(hit, transform.position + dir * viewRadius, viewRadius, globalAngle);
         }
     }
 
@@ -132,7 +151,7 @@ public class FieldOfView : MonoBehaviour
         public float dst;
         public float angle;
 
-        public ViewCastInfo(bool _hit, Vector3 _point, float _dst, float _angle)
+        public ViewCastInfo(RaycastHit2D _hit, Vector3 _point, float _dst, float _angle)
         {
             hit = _hit;
             point = _point;
