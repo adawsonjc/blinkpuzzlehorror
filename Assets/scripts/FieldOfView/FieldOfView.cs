@@ -120,8 +120,7 @@ public class FieldOfView : MonoBehaviour
         for (int i = 0; i < vertices.Length; i++)
         {
             
-            colors[i] = new Color(0,0,0,a);
-            a = vertices.Length / 2 > i ? a-0.2f : a+0.2f;
+            colors[i] = new Color(0,0,0);
         }
 
         viewMesh.colors = colors;

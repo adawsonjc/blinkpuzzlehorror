@@ -235,12 +235,27 @@ PrefabInstance:
     - target: {fileID: 5346356437972293658, guid: 30ac3687b7809674a94103480089adb2,
         type: 3}
       propertyPath: viewRadius
-      value: 21.44
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5346356437972293658, guid: 30ac3687b7809674a94103480089adb2,
         type: 3}
       propertyPath: viewAngle
-      value: 122
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346356437972293658, guid: 30ac3687b7809674a94103480089adb2,
+        type: 3}
+      propertyPath: targetMask.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346356437972293658, guid: 30ac3687b7809674a94103480089adb2,
+        type: 3}
+      propertyPath: obstacleMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346356437972293658, guid: 30ac3687b7809674a94103480089adb2,
+        type: 3}
+      propertyPath: meshResolution
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30ac3687b7809674a94103480089adb2, type: 3}
@@ -256,7 +271,7 @@ GameObject:
   - component: {fileID: 1390281519}
   - component: {fileID: 1390281518}
   - component: {fileID: 1390281517}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
