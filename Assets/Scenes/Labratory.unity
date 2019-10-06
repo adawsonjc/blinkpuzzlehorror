@@ -163,7 +163,7 @@ Transform:
   - {fileID: 1805939045}
   - {fileID: 1390281516}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &106405795
 PrefabInstance:
@@ -215,7 +215,7 @@ PrefabInstance:
     - target: {fileID: 5346356437972293632, guid: 30ac3687b7809674a94103480089adb2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5346356437972293632, guid: 30ac3687b7809674a94103480089adb2,
         type: 3}
@@ -250,7 +250,7 @@ PrefabInstance:
     - target: {fileID: 5346356437972293658, guid: 30ac3687b7809674a94103480089adb2,
         type: 3}
       propertyPath: viewRadius
-      value: 10
+      value: 10.04
       objectReference: {fileID: 0}
     - target: {fileID: 5346356437972293658, guid: 30ac3687b7809674a94103480089adb2,
         type: 3}
