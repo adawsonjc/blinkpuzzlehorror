@@ -42,9 +42,7 @@ public class PlayerMovement : MonoBehaviour {
 
         controller.Move(
             horizontalMove * this.runSpeed * Time.fixedDeltaTime,
-            verticalMove * this.runSpeed * Time.fixedDeltaTime,
-            false,
-            jump
+            verticalMove * this.runSpeed * Time.fixedDeltaTime
         );
 
         jump = false;

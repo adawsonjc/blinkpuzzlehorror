@@ -71,11 +71,7 @@ public class FieldOfView : MonoBehaviour
         }
 
     }
-    public static void DumpToConsole(object obj)
-    {
-        var output = JsonUtility.ToJson(obj, true);
-        Debug.Log(output);
-    }
+ 
 
     void DrawFieldOfView()
     {
@@ -86,9 +82,7 @@ public class FieldOfView : MonoBehaviour
         for (int i =0; i <= stepCount; i++)
         {
             float angle = (transform.eulerAngles.z*-1) - viewAngle / 2 + stepAngleSize * i;
-            Debug.DrawLine(transform.position, transform.position + DirFromAngle(angle, true) * viewRadius, Color.red);
             ViewCastInfo newViewCastInfo = ViewCast(angle);
-            DumpToConsole(newViewCastInfo);
             viewPoints.Add(newViewCastInfo.point);
         }
 
@@ -111,19 +105,6 @@ public class FieldOfView : MonoBehaviour
 
         viewMesh.Clear();
         viewMesh.vertices = vertices;
-   
-        // create new colors array where the colors will be created.
-        Color[] colors = new Color[vertices.Length];
-
-        float a = 1f;
-        // control the color of each segment of field of view. 
-        for (int i = 0; i < vertices.Length; i++)
-        {
-            
-            colors[i] = new Color(0,0,0);
-        }
-
-        viewMesh.colors = colors;
         viewMesh.triangles = triangles;
         viewMesh.RecalculateNormals();
     }
