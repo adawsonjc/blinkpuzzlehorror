@@ -14,7 +14,7 @@ Shader "Custom/ShadowShader"
 	}
 	SubShader
 	{
-		Tags {"Queue" = "Transparent" "RenderType" = "Transparent" }
+		Tags {"Queue" = "Transparent+1" "RenderType" = "Transparent" }
 		LOD 100
 
 		ZWrite Off
