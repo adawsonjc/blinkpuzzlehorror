@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FieldOfView : MonoBehaviour
 {
-
     public float viewRadius;
     [Range(0, 360)]
     public float viewAngle;
@@ -15,6 +14,7 @@ public class FieldOfView : MonoBehaviour
     public List<Transform> visibleTargets = new List<Transform>();
 
     public float meshResolution;
+    public int edgeResolveIterations;
 
     public MeshFilter viewMeshFilter;
     Mesh viewMesh;
@@ -78,12 +78,32 @@ public class FieldOfView : MonoBehaviour
         int stepCount = Mathf.RoundToInt(viewAngle * meshResolution);
         float stepAngleSize = viewAngle / stepCount;
         List<Vector3> viewPoints = new List<Vector3> ();
+        ViewCastInfo oldViewCast = new ViewCastInfo();
 
+
+        
         for (int i =0; i <= stepCount; i++)
         {
             float angle = (transform.eulerAngles.z*-1) - viewAngle / 2 + stepAngleSize * i;
             ViewCastInfo newViewCastInfo = ViewCast(angle);
+            if (i > 0)
+            {
+                if (oldViewCast.hit != newViewCastInfo.hit)
+                {
+                    EdgeInfo edge = FindEdge(oldViewCast, newViewCastInfo);
+                    if (edge.pointA != Vector2.zero)
+                    {
+                        viewPoints.Add(edge.pointA);
+                    }
+                    if (edge.pointB != Vector2.zero)
+                    {
+                        viewPoints.Add(edge.pointA);
+                    }
+                }
+            }
+
             viewPoints.Add(newViewCastInfo.point);
+            oldViewCast = newViewCastInfo;
         }
 
         int vertexCount = viewPoints.Count + 1;
@@ -151,6 +171,44 @@ public class FieldOfView : MonoBehaviour
 
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad),
             Mathf.Cos(angleInDegrees * Mathf.Deg2Rad), 0);
+    }
+
+    public struct EdgeInfo
+    {
+        public Vector2 pointA;
+        public Vector2 pointB;
+        public EdgeInfo(Vector2 _pointA, Vector2 _pointB)
+        {
+            pointA = _pointA;
+            pointB = _pointB;
+        }
+    }
+
+    EdgeInfo FindEdge(ViewCastInfo minViewCast, ViewCastInfo maxViewCast)
+    {
+        float minAngle = minViewCast.angle;
+        float maxAngle = maxViewCast.angle;
+        Vector2 minPoint = Vector2.zero;
+        Vector2 maxPoint = Vector2.zero;
+
+
+        for (int i = 0; i< edgeResolveIterations; i++)
+        {
+            float angle = (minAngle + minAngle) / 2;
+            ViewCastInfo newViewCast = ViewCast(angle);
+
+            if(newViewCast.hit == minViewCast.hit)
+            {
+                minAngle = angle;
+                maxPoint = newViewCast.point;
+            } else
+            {
+                maxAngle = angle;
+                maxPoint = newViewCast.point;
+            }
+        }
+
+        return new EdgeInfo(minPoint, maxPoint);
     }
 
 }

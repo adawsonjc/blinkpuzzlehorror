@@ -18,7 +18,7 @@ public class FootstepsScript : MonoBehaviour
     {
         if (!controller.isMoving)
         {
-            Debug.Log(controller.isMoving);
+            //Debug.Log(controller.isMoving);
             audio.Play();
         }
     }
