@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour {
     bool jump = false;
     bool up = false;
 
+    float rotationSpeed = 5f;
 
     private void Start()
     {
@@ -22,12 +23,10 @@ public class PlayerMovement : MonoBehaviour {
         viewCamera = Camera.main;
     }
 
-
     // Update is called once per frame
     void Update () {
 		horizontalMove = Input.GetAxisRaw("Horizontal");
         verticalMove = Input.GetAxisRaw("Vertical");
-
 
         //Get the mouse position, and have the Player look towards it:
         //The below is a translation of Vector3.Angle
@@ -35,7 +34,8 @@ public class PlayerMovement : MonoBehaviour {
         //Turn the Vector into a Unit vector using normalize
         diff.Normalize();
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+        transform.rotation = Quaternion.Lerp(rigidbody2D.transform.rotation, Quaternion.Euler(0f, 0f, rot_z - 90), Time.fixedDeltaTime * rotationSpeed);
+
     }
 
     private void FixedUpdate() {

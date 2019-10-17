@@ -86,11 +86,13 @@ public class FieldOfView : MonoBehaviour
         {
             float angle = (transform.eulerAngles.z*-1) - viewAngle / 2 + stepAngleSize * i;
             ViewCastInfo newViewCastInfo = ViewCast(angle);
+
             if (i > 0)
             {
                 if (oldViewCast.hit != newViewCastInfo.hit)
                 {
-                    EdgeInfo edge = FindEdge(oldViewCast, newViewCastInfo);
+                    //Debug.Log("Do we enter?");
+                    /*EdgeInfo edge = FindEdge(oldViewCast, newViewCastInfo);
                     if (edge.pointA != Vector2.zero)
                     {
                         viewPoints.Add(edge.pointA);
@@ -98,7 +100,7 @@ public class FieldOfView : MonoBehaviour
                     if (edge.pointB != Vector2.zero)
                     {
                         viewPoints.Add(edge.pointA);
-                    }
+                    }*/
                 }
             }
 
@@ -190,11 +192,12 @@ public class FieldOfView : MonoBehaviour
         float maxAngle = maxViewCast.angle;
         Vector2 minPoint = Vector2.zero;
         Vector2 maxPoint = Vector2.zero;
-
+        Debug.Log("Previous angles (min/max) : " + minAngle + ":" + maxAngle);
 
         for (int i = 0; i< edgeResolveIterations; i++)
         {
-            float angle = (minAngle + minAngle) / 2;
+            float angle = (minAngle + maxAngle) / 2f;
+            Debug.Log("New angle to try: " + minAngle + " + " + maxAngle + " / 2 = " + angle);
             ViewCastInfo newViewCast = ViewCast(angle);
 
             if(newViewCast.hit == minViewCast.hit)
