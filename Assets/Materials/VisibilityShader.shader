@@ -1,12 +1,21 @@
 ﻿Shader "Custom/VisibilityShader"
 {
+
+	Properties
+	{
+		_MainTex ("Texture", 2D) = "white" {}
+        _Threshold("Threshold", float) = 1
+        _EdgeColor("Edge color", Color) = (0,0.5,0.5,1)
+
+	}
 	SubShader
 	{
 		Tags{"Queue" = "Transparent" "RenderType" = "Transparent"}
-		ColorMask 0
 
 		Pass
 		{
+			ColorMask 0
+
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -28,11 +37,13 @@
 				return o;
 			}
 
-			half4 frag(v2f i) : SV_Target
+			float4 frag(v2f i) : SV_Target
 			{
-				return 0;
+				return float4(1, 1, 1, 1);
 			}
 			ENDCG
 		}
+
+		
 	}
 }

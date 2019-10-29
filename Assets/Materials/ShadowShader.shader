@@ -1,4 +1,6 @@
-﻿
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
+
 
 Shader "Custom/ShadowShader"
 {
@@ -7,7 +9,7 @@ Shader "Custom/ShadowShader"
 		_MainTex("Albedo Texture", 2D) = "white" {}
 		_TintColor("Tint Color", Color) = (1,1,1,1)
 		_Transparency("Transparency", Range(0.0,1)) = 0.25
-		_Player_pos("Player Position", Vector) = (0,0,0,1)
+		_Player_pos("_Player_pos", Vector) = (0,0,0,1)
 		_ShadowRadius("Shadow Radius", float) = 1.0
 		_MaxShadowRadius("max Shadow Radius", float) = 0.5
 
@@ -28,16 +30,11 @@ Shader "Custom/ShadowShader"
 
 			#include "UnityCG.cginc"
 
-			struct appdata
-			{
-				float4 vertex : POSITION;
-				float2 uv : TEXCOORD0;
-			};
-
+	
 			struct v2f
 			{
+				float4 pos :  SV_POSITION;
 				float2 uv : TEXCOORD0;
-				float4 vertex : SV_POSITION;
 			};
 
 			float powerForPos(float4 pos, float2 nearVertex);
@@ -50,27 +47,28 @@ Shader "Custom/ShadowShader"
 			float _ShadowRadius;
 			float _CutoutThresh;
 
-			v2f vert(appdata v)
+			v2f vert(appdata_full v)
 			{
 				v2f o;
-				o.vertex = UnityObjectToClipPos(v.vertex);
-				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+				o.pos  =  UnityObjectToClipPos(v.vertex);
+				o.uv = v.texcoord;
 				return o;
 			}
 
 			fixed4 frag(v2f i) : SV_Target
 			{
-				// sample the texture
-				float alpha = (1 - powerForPos(_Player_pos, i.vertex));
-				fixed4 col = _TintColor;
+				fixed4 col = tex2D(_MainTex, i.uv) * _TintColor;
+
+				float alpha = (1 - powerForPos(_Player_pos, i.pos));
 				col.a = alpha;
+
 				return col;
 			}
 
 			// return 0 if pos - nearVertex > shadowRadius
 			float powerForPos(float4 pos, float2 nearVertex) {
-				float atten = (_ShadowRadius - length(pos.xz - nearVertex.xy));
-				return atten/_ShadowRadius;
+				float atten = (_ShadowRadius - length(pos.xy - nearVertex.xy));
+				return atten;
 			}
 			ENDCG
 		}

@@ -30,6 +30,9 @@ public class FieldOfView : MonoBehaviour
     private void LateUpdate()
     {
         DrawFieldOfView();
+        DumpToConsole(viewMesh.vertices);
+
+
     }
 
     IEnumerator FindTargetsWithDelay(float delay)
@@ -81,7 +84,7 @@ public class FieldOfView : MonoBehaviour
         ViewCastInfo oldViewCast = new ViewCastInfo();
 
 
-        
+
         for (int i =0; i <= stepCount; i++)
         {
             float angle = (transform.eulerAngles.z*-1) - viewAngle / 2 + stepAngleSize * i;
@@ -130,7 +133,11 @@ public class FieldOfView : MonoBehaviour
         viewMesh.triangles = triangles;
         viewMesh.RecalculateNormals();
     }
-
+    public static void DumpToConsole(object obj)
+    {
+        var output = JsonUtility.ToJson(obj, true);
+        Debug.Log(output);
+    }
     ViewCastInfo ViewCast(float globalAngle)
     {
         Vector3 dir = DirFromAngle(globalAngle, true);
